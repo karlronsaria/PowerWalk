@@ -1,0 +1,59 @@
+
+def len(e): Int64
+    declare length := 0
+    for each i in e
+        increment length
+    return length
+
+def ShowWordWrap: void
+    in str : String, length : Int64
+
+    declare line := ""
+    declare word := ""  # Try to combine this line with the above.
+
+    for each i in str
+        if i = ' '
+            if len(line) plus len(word) > length  # Try this with '>=' instead.
+                writeline line
+                set line := ""
+            add line := word plus ' '
+            set word := ""
+        else
+            add word := i
+
+    write line
+
+    if len(line) plus len(word) > length
+        writeline
+
+    writeline word
+
+def HelloWorld(): void
+    writeline "Hello World!"
+
+def Reverse : void
+    out str : String
+
+    set len := len(str)
+
+    declare temp := ""
+
+    for i in [0, len)
+        add temp <- str[len - 1 - i]
+
+    str <- temp
+
+
+I can right anything here.
+
+// declare str := "It's all I have to bring today, this and my heart beside, this and my heart and all the fields, and all the meadows wide."
+
+
+// "on the long way down"
+// "there? is no? place for us, where only we can go"
+// "let me be your radio"
+// "if i had a time machine ... go back and i'd tell me, run?"
+// "we are complex by degree"
+// "someone|somebody to lean on"
+// "still got love for you ... comin' home for you"
+
